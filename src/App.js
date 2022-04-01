@@ -35,8 +35,8 @@ export default class App extends React.Component {
     ]
   };
 
-  handleClickPost() {
-    console.log('click on post')
+  removePost = (id) => {
+    this.setState({posts: this.state.posts.filter(post => post.id !== id)})    
   }
 
   render() {
@@ -45,7 +45,7 @@ export default class App extends React.Component {
     // хороший пример дестркуторизации
     return (
       <div className="App">
-        <Posts posts={posts} clickOnPost={this.handleClickPost} />
+        <Posts posts={posts} removePost={this.removePost} />
       </div>
     );
   }

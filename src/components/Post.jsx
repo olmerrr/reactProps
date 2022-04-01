@@ -1,7 +1,10 @@
 export const Post = (props) => {
-  const {title, clickOnPost} = props;
+  const {title, id, removePost} = props;
   return <div className="post-item">
     <h2>{title}</h2>
-    <button onClick={clickOnPost}>Click on me</button>
+    <button 
+      className="btn"
+      onClick= {() => removePost(id) }
+      >remove</button>
   </div>
 }
